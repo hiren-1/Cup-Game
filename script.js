@@ -77,16 +77,39 @@ function draw(){
 
          }
 
-      }  
 
+      }
+
+    if (ballLocation === 0 && isCupDown[0] === false){
+        fill(255,99,71);
+        text("You won!", 180, 220)
+      }
+     else if (ballLocation === 1 && isCupDown[1] === false){
+        fill(255,99,71);
+        text("You won!", 180, 220)
+      }
+     else if (ballLocation === 2 && isCupDown[2] === false){
+        fill(255,99,71);
+        text("You won!", 180, 220)
+      }
+     else if (ballLocation === 3 && isCupDown[3] === false){
+        fill(255,99,71);
+        text("You won!", 180, 220)
+      }
+     else if (ballLocation === 4 && isCupDown[4] === false){
+        fill(255,99,71);
+        text("You won!", 180, 220)
+      }
     }
  }
 
 
 function keyPressed(){
  
+
   if(key>='0' && key <= '4'){
 
+    if (isGameOver === false){
       totalKeypressed = totalKeypressed + 1;
 
       console.log(totalKeypressed);
@@ -94,17 +117,18 @@ function keyPressed(){
     let keyNum = Number(key);
      
       isCupDown[keyNum] = false;
-
+    }
   }
-
+ 
 
     else if (key === "r" || key === "R"){
       
+    
       for (let i = 0; i<5; i++){
       isCupDown[i] = true;
       totalKeypressed = 0;
       }
-        
+    
       ballLocation = Math.floor(Math.random() * 5);
  
     }
